@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seijuts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- bg video-->
+<body>
+  <video id="bg-video" loop autoplay>
+    <source src="assets/bg8.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+<!-- pfp card-->  
+  <div class="overlay" id="mainContent" style="display: flex;">
+    <div class="card">
+      <div class="profile-pic-wrapper" style="display: flex; gap: 16px; justify-content: center;">
+        <img class="profile-pic-noborder" src="assets/gif22.gif" alt="profile tanpa border" />
+      </div>
+      <div class="typing-title" style="font-size: 1.5rem; margin-bottom: 20px; min-height: 36px;"></div>
+      <div class="icons">
+        <a href="https://discord.gg/4ESwuhtntU" target="_blank"><i class="fab fa-discord"></i></a>
+        <a href="https://open.spotify.com/user/31uakyvjn3kxlml5lysrw7li2rla" target="_blank"><i class="fab fa-spotify"></i></a>
+        <a href="https://www.roblox.com/users/8317666346/profile" target="_blank"><span class="roblox-icon" aria-label="Roblox">
+          <svg viewBox="0 0 40 40" width="32" height="32" fill="white" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;">
+            <rect x="6" y="6" width="28" height="28" rx="6" transform="rotate(15 20 20)" fill="white"/>
+            <rect x="17" y="17" width="6" height="6" rx="1" transform="rotate(15 20 20)" fill="#181818"/>
+          </svg>
+        </span></a>
+        <a href="https://www.youtube.com/@seigenzr" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://github.com/iz4re" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+
+<!-- section about me-->
+  <section class="about-me" id="about-me">
+    <h2 class="fade-in-section shiny-text">About Me</h2>
+    <p class="fade-in-section">
+      Hi, I'm Seigen! Right now, I'm casually diving into web development and experimenting with building my own portfolio website mostly just for fun and to explore something new. I’ve always been more into mobile development, so working on websites feels like stepping into a whole new playground. 
+      <br><br>I’m still learning the ropes when it comes to HTML, CSS, and everything in between, but I’m enjoying the process and discovering how creative web design can be. This site is one of my first real attempts at making something from scratch on the web, and I'm excited to keep learning and improving as I go!
+    </p>
+  </section>
+
+<!--section hit me up-->
+  <section class="experience" id="experience">
+    <h2 class="fade-in-section shiny-text-orange">Hit Me Up!</h2>
+    <p class="fade-in-section" style="font-size: 1.2rem; max-width: 600px; text-align: center; line-height: 1.7; font-family: 'Inter', Arial, sans-serif; margin: 0 auto 32px auto; color: #fff;">
+      Join our Discord server to connect, share, and chill with the community! Discover new friends, exciting discussions, and the latest updates there.
+    </p>
+    <div class="promo-row">
+      <div class="promo-card fade-in-section">
+        <a href="https://discord.gg/pqeFUfhT" target="_blank" style="text-decoration:none;">
+          <img src="assets/y6reypic.jpeg" alt="y6rey server" style="width:100%;max-width:320px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.2);margin-bottom:16px;">
+          <div style="font-size:1.3rem;font-weight:bold;color:#fff;text-align:center;">y6rey</div>
+        </a>
+      </div>
+      <div class="promo-card fade-in-section">
+        <a href="https://discord.gg/4ESwuhtntU" target="_blank" style="text-decoration:none;">
+          <img src="assets/exopic.jpeg" alt="Join our Discord" style="width:100%;max-width:320px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.2);margin-bottom:16px;">
+          <div style="font-size:1.3rem;font-weight:bold;color:#fff;text-align:center;">eXo PROJECT</div>
+        </a>
+      </div>
+      <div class="promo-card fade-in-section">
+        <a href="https://discord.gg/qrxnWMtB" target="_blank" style="text-decoration:none;">
+          <img src="assets/chillzonepic.jpeg" alt="chill zone server" style="width:100%;max-width:320px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.2);margin-bottom:16px;">
+          <div style="font-size:1.3rem;font-weight:bold;color:#fff;text-align:center;">Chill Zone</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Splash/Enter Page -->
+  <div id="splash" style="position:fixed;z-index:1000;top:0;left:0;width:100vw;height:100vh;background:rgba(20,20,20,0.98);display:flex;align-items:center;justify-content:center;flex-direction:column;">
+    <h1 style="color:#fff;font-size:2.5rem;margin-bottom:25px;letter-spacing:2px;">Welcome</h1>
+    <button id="enterButton" style="background:#68778d2a;color:#fff;font-size:1.3rem;padding:18px 48px;border:none;border-radius:12px;cursor:pointer;box-shadow:0 4px 24px rgba(0,0,0,0.18);transition:background 0.2s;">Click to continue</button>
+  </div>
+
+<!-- js button mute-->
+  <button id="playVideoBtn" class="play-btn" style="display:none;"></button>
+
+  <button id="muteButton" class="mute-btn" aria-label="Toggle mute">
+    <i id="muteIcon" class="fas fa-volume-mute"></i>
+  </button>
+
+  <script>
+    const video = document.getElementById('bg-video');
+    const muteButton = document.getElementById('muteButton');
+    const muteIcon = document.getElementById('muteIcon');
+    const playBtn = document.getElementById('playVideoBtn');
+
+    video.play().catch(() => {
+      playBtn.style.display = 'block';
+    });
+
+    playBtn.addEventListener('click', () => {
+      video.muted = false;
+      video.play();
+      playBtn.style.display = 'none';
+    });
+
+    function updateMuteIcon() {
+      if (video.muted) {
+        muteIcon.classList.remove('fa-volume-up');
+        muteIcon.classList.add('fa-volume-mute');
+      } else {
+        muteIcon.classList.remove('fa-volume-mute');
+        muteIcon.classList.add('fa-volume-up');
+      }
+    }
+
+    muteButton.addEventListener('click', () => {
+      video.muted = !video.muted;
+      video.play(); 
+      updateMuteIcon();
+    });
+
+    updateMuteIcon();
+
+    // typewritter animation
+    const typingTitle = document.querySelector('.typing-title');
+    const text = 'izare';
+    let idx = 0;
+    function typeTitle() {
+      if (idx <= text.length) {
+        typingTitle.textContent = text.slice(0, idx);
+        idx++;
+        setTimeout(typeTitle, 180);
+      } else {
+        setTimeout(() => {
+          idx = 0;
+          typeTitle();
+        }, 1200);
+      }
+    }
+    typeTitle();
+
+    // fade in
+    const faders = document.querySelectorAll('.fade-in-section');
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -40px 0px'
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Splash/Enter logic
+    const splash = document.getElementById('splash');
+    const mainContent = document.getElementById('mainContent');
+    const aboutMe = document.getElementById('about-me');
+    const experience = document.getElementById('experience');
+    mainContent.style.display = 'none';
+    aboutMe.style.display = 'none';
+    experience.style.display = 'none';
+    document.getElementById('playVideoBtn').style.display = 'none';
+
+    document.getElementById('enterButton').addEventListener('click', function() {
+      splash.style.display = 'none';
+      mainContent.style.display = 'flex';
+      aboutMe.style.display = '';
+      experience.style.display = '';
+      video.muted = false;
+      video.play();
+    });
+  </script>
+</body>
+</html>
